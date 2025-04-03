@@ -1,0 +1,155 @@
+/* Dark Theme Base Styles */
+:root {
+  --background-primary: #0a0a0a;
+  --background-secondary: #111111;
+  --background-tertiary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #a0aec0;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #1d4ed8;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --card-background: rgba(26, 26, 26, 0.7);
+  --glass-effect: rgba(255, 255, 255, 0.03);
+}
+
+/* Glass Effect Styles */
+.glass-effect {
+  background: var(--card-background);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-effect:hover {
+  background: rgba(26, 26, 26, 0.8);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Card Styles */
+.dark-card {
+  background: var(--background-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.dark-card:hover {
+  background: var(--background-tertiary);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+/* Button Styles */
+.dark-button {
+  background: var(--accent-primary);
+  color: var(--text-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.dark-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.dark-button:hover::before {
+  left: 100%;
+}
+
+.dark-button:hover {
+  background: var(--accent-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Input Styles */
+.dark-input {
+  background: var(--background-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.dark-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  outline: none;
+}
+
+/* Loading Animation */
+.loading-spinner {
+  border: 3px solid var(--background-tertiary);
+  border-top: 3px solid var(--accent-primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Onfido SDK Dark Theme Overrides */
+.onfido-sdk-ui-Modal {
+  background: var(--background-primary) !important;
+}
+
+.onfido-sdk-ui-Modal-inner {
+  background: var(--background-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.onfido-sdk-ui-Theme-header {
+  background: var(--background-tertiary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.onfido-sdk-ui-Button-button {
+  background: var(--accent-primary) !important;
+  transition: all 0.3s ease !important;
+}
+
+.onfido-sdk-ui-Button-button:hover {
+  background: var(--accent-secondary) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--background-tertiary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+} 

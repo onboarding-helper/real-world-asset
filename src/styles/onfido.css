@@ -1,0 +1,120 @@
+
+
+/* Onfido SDK container styles */
+#onfido-mount {
+  position: relative;
+  min-height: 600px;
+  width: 100%;
+  background: #fff;
+}
+
+/* Onfido modal styles */
+.onfido-sdk-ui-Modal {
+  z-index: 50;
+}
+
+.onfido-sdk-ui-Modal-inner {
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  overflow: auto !important;
+  max-height: 90vh !important;
+}
+
+/* Onfido button styles */
+.onfido-sdk-ui-Button-button {
+  background-color: #2563eb !important;
+  border-radius: 0.375rem !important;
+  padding: 0.5rem 1rem !important;
+  font-weight: 500 !important;
+  transition: background-color 0.2s !important;
+}
+
+.onfido-sdk-ui-Button-button:hover {
+  background-color: #1d4ed8 !important;
+}
+
+/* Onfido header styles */
+.onfido-sdk-ui-Theme-header {
+  background-color: #f8fafc !important;
+  padding: 1rem !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+/* Onfido progress bar */
+.onfido-sdk-ui-Progress-progress {
+  background-color: #2563eb !important;
+  height: 4px !important;
+}
+
+/* Onfido document upload styles */
+.onfido-sdk-ui-DocumentUpload {
+  border: 2px dashed #e2e8f0 !important;
+  border-radius: 0.5rem !important;
+  padding: 2rem !important;
+  text-align: center !important;
+}
+
+.onfido-sdk-ui-DocumentUpload:hover {
+  border-color: #2563eb !important;
+}
+
+/* Onfido face capture styles */
+.onfido-sdk-ui-FaceCapture {
+  background-color: #f8fafc !important;
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
+}
+
+/* Onfido welcome screen styles */
+.onfido-sdk-ui-Welcome {
+  text-align: center !important;
+  padding: 2rem !important;
+}
+
+.onfido-sdk-ui-Welcome-title {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+}
+
+.onfido-sdk-ui-Welcome-description {
+  color: #64748b !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Onfido error styles */
+.onfido-sdk-ui-Error {
+  background-color: #fee2e2 !important;
+  border: 1px solid #fecaca !important;
+  border-radius: 0.375rem !important;
+  padding: 1rem !important;
+  margin: 1rem 0 !important;
+}
+
+.onfido-sdk-ui-Error-message {
+  color: #dc2626 !important;
+  font-size: 0.875rem !important;
+}
+
+/* Onfido loading styles */
+.onfido-sdk-ui-Loading {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 200px !important;
+}
+
+.onfido-sdk-ui-Loading-spinner {
+  width: 40px !important;
+  height: 40px !important;
+  border: 3px solid #e2e8f0 !important;
+  border-top-color: #2563eb !important;
+  border-radius: 50% !important;
+  animation: spin 1s linear infinite !important;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+} 

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,800;1,6..12,400&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import './styles/onfido.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -34,4 +35,448 @@
   .card {
     @apply bg-white rounded-lg shadow-md overflow-hidden;
   }
+}
+
+
+
+
+/* Light theme variables - Black and Orange theme */
+.light-theme {
+  --background-primary: #fff7ed;   /* Soft orange-tinted background */
+  --background-secondary: #ffffff;
+  --text-primary: #000000;         /* Black text */
+  --text-secondary: #292524;       /* Dark gray text */
+  --accent-primary: #f97316;       /* Orange - same as dark theme for consistency */
+  --accent-secondary: #ea580c;     /* Darker orange */
+  --border-color: #e2e8f0;
+  --card-bg: #ffffff;
+  --hover-bg: #ffedd5;             /* Very light orange */
+  --success: #f59e0b;
+  --warning: #d69e2e;
+  --danger: #e53e3e;
+  --info: #3182ce;
+}
+
+/* Base styles */
+body {
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  margin: 0;
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  letter-spacing: 0.02em;
+}
+
+/* Headings with strong Tektur styling */
+h1, h2, h3, .card-title {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* Paragraph text with slightly looser spacing for readability */
+p {
+  line-height: 1.6;
+}
+
+/* Custom cursor - only shown in dark mode */
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(249, 115, 22, 0.5);  /* Orange */
+  pointer-events: none;
+  mix-blend-mode: screen;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s;
+  filter: blur(5px);
+  box-shadow: 0 0 15px 5px rgba(249, 115, 22, 0.3);  /* Orange */
+}
+
+.cursor-dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+}
+
+/* Hide cursor in light mode */
+.light-theme .cursor,
+.light-theme .cursor-dot {
+  display: none;
+}
+
+/* Glossy overlay effect - different for dark vs light */
+.glossy-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% 0%, 
+    rgba(249, 115, 22, 0.08) 0%, 
+    rgba(0, 0, 0, 0) 60%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.light-theme .glossy-effect {
+  background: linear-gradient(
+    to bottom right,
+    rgba(249, 115, 22, 0.05) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  opacity: 0.7;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+}
+.content-wrapper > .profile-navbar{
+  width:20%;
+}
+.content-wrapper main{
+  flex:1;
+}
+
+/* Card styling */
+.dark-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.light-theme .dark-card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.glass-effect {
+  position: relative;
+}
+
+.glass-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(to bottom, rgba(249, 115, 22, 0.05), transparent);
+  border-radius: 0.75rem 0.75rem 0 0;
+  pointer-events: none;
+}
+
+.light-theme .glass-effect::before {
+  background: linear-gradient(to bottom, rgba(249, 115, 22, 0.05), transparent);
+}
+
+/* Button styling with Tektur font - different for dark vs light */
+.dark-button {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: #ffffff;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  letter-spacing: 0.03em;
+}
+
+.dark-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);  /* Orange */
+}
+
+.light-theme .dark-button {
+  box-shadow: 0 2px 4px rgba(249, 115, 22, 0.2);  /* Orange */
+}
+
+.light-theme .dark-button:hover {
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);  /* Orange */
+}
+
+.dark-button:disabled {
+  background: linear-gradient(135deg, #666666, #888888);
+  transform: none;
+  cursor: not-allowed;
+}
+
+/* Status indicators */
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.status-success {
+  background-color: rgba(249, 115, 22, 0.2);
+  color: var(--success);
+}
+
+.status-warning {
+  background-color: rgba(255, 204, 0, 0.2);
+  color: var(--warning);
+}
+
+.status-danger {
+  background-color: rgba(255, 59, 92, 0.2);
+  color: var(--danger);
+}
+
+.light-theme .status-success {
+  background-color: rgba(249, 115, 22, 0.1);
+}
+
+.light-theme .status-warning {
+  background-color: rgba(214, 158, 46, 0.1);
+}
+
+.light-theme .status-danger {
+  background-color: rgba(229, 62, 62, 0.1);
+}
+
+/* Form elements */
+input, select, textarea {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+  font-family: var(--font-primary);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
+}
+
+/* Loading spinner */
+.loading-spinner {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 3px solid rgba(249, 115, 22, 0.2);  /* Orange for dark */
+  border-top-color: var(--accent-primary);
+  animation: spin 1s linear infinite;
+}
+
+.light-theme .loading-spinner {
+  border: 3px solid rgba(249, 115, 22, 0.2);  /* Orange for light */
+  border-top-color: var(--accent-primary);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  transition: color 0.3s ease;
+  font-family: var(--font-primary);
+}
+
+th {
+  background-color: var(--background-secondary);
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: border-color 0.3s ease;
+}
+
+/* Links */
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--accent-secondary);
+}
+
+/* Progress stepper */
+.progress-step {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.progress-step-circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  z-index: 1;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  font-family: var(--font-primary);
+  font-weight: 600;
+}
+
+.progress-step-circle.active {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  border-color: var(--accent-primary);
+}
+
+.progress-step-line {
+  flex: 1;
+  height: 2px;
+  background-color: var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+.progress-step-line.active {
+  background-color: var(--accent-primary);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444444;
+  border-radius: 4px;
+}
+
+.light-theme ::-webkit-scrollbar-thumb {
+  background: #f97316;  /* Orange scrollbar for light theme */
+  opacity: 0.7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
+.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: #ea580c;  /* Darker orange on hover */
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 99;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-3px);
+}
+
+.light-theme .theme-toggle {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Dashboard specific styles with hover fix */
+/* Quick Action Links */
+.dark-card a.block {
+  transition: background-color 0.3s ease, border-color 0.3s;
+  background-color: var(--background-secondary);
+}
+
+.dark-card a.block:hover {
+  background-color: var(--hover-bg);
+  border-color: var(--accent-primary);
+}
+
+.light-theme .dark-card a.block:hover {
+  background-color: var(--hover-bg);
+}
+
+/* Card hover states */
+.dark-card:hover, 
+.dark-card div:hover {
+  background-color: var(--hover-bg);
+}
+
+.light-theme .dark-card:hover,
+.light-theme .dark-card div:hover {
+  background-color: var(--hover-bg);
+}
+
+/* Unique styling for Tektur font */
+.brand-name {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.tech-text {
+  font-family: var(--font-primary);
+  letter-spacing: 0.1em;
+}
+
+/* Monospace text (for code, addresses, etc.) */
+.font-mono {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9em;
 }

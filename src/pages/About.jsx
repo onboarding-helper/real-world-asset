@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { FiUsers, FiDollarSign, FiGlobe, FiShield, FiBriefcase, FiAward } from 'react-icons/fi';
 import { FaBitcoin, FaEthereum, FaHandshake } from 'react-icons/fa';
 import { SiChainlink } from 'react-icons/si';
-import MehdiRezakhani_Pic from '../assets/MehdiRezakhani2.jpeg'
 
 function About() {
   const stats = [
@@ -44,7 +43,7 @@ function About() {
     {
       name: 'Mehdi Rezakhani',
       role: 'Web & Mobile Developer',
-      image: MehdiRezakhani_Pic,
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
       bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi amet debiti'
     },
     {
