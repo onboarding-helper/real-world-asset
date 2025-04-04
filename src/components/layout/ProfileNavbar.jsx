@@ -44,7 +44,7 @@ const Navbar = () => {
 	<div className="divide-y dark:divide-gray-300">
 		<ul className="pt-2 pb-4 space-y-1 text-sm">
 			{
-				PROFILE_SIDEBAR_MENU.map((item)=><li className="dark:bg-gray-100 dark:text-gray-900">
+				PROFILE_SIDEBAR_MENU.map((item)=><li className="dark:bg-gray-100 dark:text-gray-900" key={item.label}>
 				<a rel="noopener noreferrer" href={item.path} className="flex items-center p-2 space-x-3 rounded-md">
 					{item.icon}
 					<span>{item.label}</span>
