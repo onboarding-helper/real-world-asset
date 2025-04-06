@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import useTheme from '../hooks/useTheme';
 
 function Privacy() {
+  useTheme('white-theme');
   const sections = [
     {
       title: 'Introduction',

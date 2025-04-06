@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiSearch, FiFilter, FiArrowRight, FiTrendingUp, FiUsers, FiDollarSign } from 'react-icons/fi';
 import { FaEthereum } from 'react-icons/fa';
+import useTheme from '../hooks/useTheme';
 
 function Properties() {
   const [showFilters, setShowFilters] = useState(false);
@@ -15,7 +16,7 @@ function Properties() {
     fundingStatus: 'all',
     sortBy: 'newest'
   });
-
+  useTheme('light-theme');
   const properties = [
     {
       id: 1,
@@ -146,7 +147,7 @@ function Properties() {
         return 0;
     }
   });
-
+  
   return (
     <div className="min-h-screen bg-secondary-50">
       {/* Header */}

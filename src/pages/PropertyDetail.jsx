@@ -3,10 +3,11 @@ import { motion } from 'framer-motion';
 import { FiHome, FiMaximize2, FiCalendar, FiShare2, FiArrowLeft, FiTrendingUp, FiUsers, FiDollarSign, FiGrid } from 'react-icons/fi';
 import { FacebookShareButton, TwitterShareButton, LinkedinShareButton } from 'react-share';
 import { FaFacebook, FaTwitter, FaLinkedin, FaEthereum, FaWallet } from 'react-icons/fa';
+import useTheme from '../hooks/useTheme';
 
 function PropertyDetail() {
   const { id } = useParams();
-
+  useTheme('light-theme');
   const property = {
     id: parseInt(id),
     title: 'Modern Villa with Pool',

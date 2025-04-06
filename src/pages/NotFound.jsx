@@ -1,6 +1,8 @@
 import React from 'react'
+import useTheme from '../hooks/useTheme';
 
 const NotFound = () => {
+    useTheme('white-theme');
     return (
         <div className='min-h-screen bg-secondary-50 flex items-center justify-center'>
             <div className="text-center">

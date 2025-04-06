@@ -2,8 +2,10 @@ import { motion } from 'framer-motion';
 import { FiUsers, FiDollarSign, FiGlobe, FiShield, FiBriefcase, FiAward } from 'react-icons/fi';
 import { FaBitcoin, FaEthereum, FaHandshake } from 'react-icons/fa';
 import { SiChainlink } from 'react-icons/si';
+import useTheme from '../hooks/useTheme';
 
 function About() {
+  useTheme('light-theme');
   const stats = [
     {
       value: '$250M+',
@@ -87,7 +89,7 @@ function About() {
               Revolutionizing Real Estate Investment
             </h1>
             <p className="text-xl text-secondary-200">
-              We're bridging the gap between traditional real estate and cryptocurrency, 
+              We're bridging the gap between traditional real estate and cryptocurrency,
               making property investment accessible, secure, and transparent through blockchain technology.
             </p>
           </motion.div>
@@ -122,8 +124,8 @@ function About() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
             <p className="text-lg text-secondary-600">
-              To democratize real estate investment by leveraging blockchain technology, 
-              making property ownership accessible to investors worldwide through 
+              To democratize real estate investment by leveraging blockchain technology,
+              making property ownership accessible to investors worldwide through
               fractional ownership and cryptocurrency transactions.
             </p>
           </div>
@@ -140,7 +142,7 @@ function About() {
               </div>
               <h3 className="text-xl font-semibold mb-4">Accessibility</h3>
               <p className="text-secondary-600">
-                Making real estate investment available to everyone through fractional ownership 
+                Making real estate investment available to everyone through fractional ownership
                 and cryptocurrency payments.
               </p>
             </motion.div>

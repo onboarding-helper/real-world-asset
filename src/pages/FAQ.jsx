@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import useTheme from '../hooks/useTheme';
 
 function FAQ() {
   const [openSections, setOpenSections] = useState({});
-
+  useTheme('light-theme');
   const faqSections = [
     {
       title: 'General Information',
@@ -183,7 +184,6 @@ function FAQ() {
       [`${sectionTitle}-${questionIndex}`]: !prev[`${sectionTitle}-${questionIndex}`]
     }));
   };
- 
 
   return (
     <div className="min-h-screen bg-secondary-50 py-16">

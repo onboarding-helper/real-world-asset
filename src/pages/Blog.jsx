@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiSearch, FiClock, FiUser, FiTag } from 'react-icons/fi';
+import useTheme from '../hooks/useTheme';
 
 function Blog() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
-
+  useTheme('light-theme');
   const categories = [
     { id: 'all', name: 'All Posts' },
     { id: 'crypto', name: 'Cryptocurrency' },

@@ -3,9 +3,11 @@ import { Canvas } from "@react-three/fiber";
 import { Leva } from "leva";
 import { Experience } from "../components/property/Experience";
 import { Overlay } from "../components/property/Overlay";
+import useTheme from '../hooks/useTheme';
 
 function App() {
   const [loading, setLoading] = useState(true);
+  useTheme('light-theme');
     useEffect(() => {
       setTimeout(() => {
         setLoading(false);

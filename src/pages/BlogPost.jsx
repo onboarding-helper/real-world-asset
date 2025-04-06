@@ -2,10 +2,11 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiClock, FiUser, FiCalendar, FiShare2, FiArrowLeft, FiTag } from 'react-icons/fi';
 import { FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import useTheme from '../hooks/useTheme';
 
 function BlogPost() {
   const { slug } = useParams();
-
+  useTheme('light-theme');
   const post = {
     title: 'The Future of Real Estate: Cryptocurrency Payments and Blockchain Technology',
     content: `

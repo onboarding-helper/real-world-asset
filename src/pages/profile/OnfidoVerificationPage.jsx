@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import onfidoService from '../../services/onfidoService';
-import '../../styles/dark-theme.css';
 
 // Add error boundary around SDK loading
 const withErrorBoundary = (WrappedComponent) => {

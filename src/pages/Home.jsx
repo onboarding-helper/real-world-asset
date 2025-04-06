@@ -5,10 +5,11 @@ import { FiArrowRight, FiUser, FiClock } from 'react-icons/fi';
 import { FaWallet, FaStore, FaMoneyBillWave, FaExchangeAlt, FaChartLine, FaLock, FaUserCog, FaCoins, FaDiscord } from 'react-icons/fa';
 import { SiEthereum } from 'react-icons/si';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import useTheme from '../hooks/useTheme';
 
 function Home() {
   const [openSections, setOpenSections] = useState({});
-
+  useTheme('light-theme');
   const featuredProperties = [
     {
       id: 1,
@@ -224,9 +225,9 @@ function Home() {
           />
           <div className="absolute inset-0 bg-black bg-opacity-50" />
         </div>
-        
+
         <div className="relative container text-center text-white space-y-8">
-          <motion.h1 
+          <motion.h1
             className="text-5xl font-bold"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -234,7 +235,7 @@ function Home() {
           >
             Invest and Trade in Real Estate with Cryptocurrency
           </motion.h1>
-          <motion.p 
+          <motion.p
             className="text-xl max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -250,7 +251,7 @@ function Home() {
           <h2 className="text-3xl font-bold mb-4">Start Investing in Minutes</h2>
           <p className="text-secondary-600">Your journey to crypto-powered real estate investment</p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {investmentSteps.map((step, index) => (
             <motion.div
@@ -281,7 +282,7 @@ function Home() {
             <h2 className="text-3xl font-bold mb-4">How GoldenCity Works</h2>
             <p className="text-secondary-300">Understanding our tokenized real estate platform</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {howItWorks.map((item, index) => (
               <motion.div
@@ -309,7 +310,7 @@ function Home() {
           <h2 className="text-3xl font-bold mb-4">Featured Investment Opportunities</h2>
           <p className="text-secondary-600">Curated properties with verified returns and immediate tokenization</p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredProperties.map((property, index) => (
             <motion.div
@@ -333,7 +334,7 @@ function Home() {
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{property.title}</h3>
                 <p className="text-secondary-600 mb-4">{property.location}</p>
-                
+
                 <div className="flex justify-between items-center mb-4">
                   <div>
                     <p className="text-sm text-secondary-500">Price</p>
@@ -381,7 +382,7 @@ function Home() {
             <h2 className="text-3xl font-bold mb-4">Why Choose GoldenCity</h2>
             <p className="text-secondary-600">Experience the future of real estate investment</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {advantages.map((advantage, index) => (
               <motion.div
@@ -400,7 +401,7 @@ function Home() {
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
       <section className="container">
         <div className="bg-primary-600 rounded-2xl p-8 md:p-12 text-white text-center">
@@ -424,7 +425,7 @@ function Home() {
           </div>
         </div>
       </section>
-      
+
       {/* Blog */}
       <div className="container bg-white py-24">
         <motion.div
@@ -531,7 +532,7 @@ function Home() {
           </div>
         </motion.div>
       </section>
-      
+
       {/* Discord CTA */}
       <section className="py-12 bg-primary-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
