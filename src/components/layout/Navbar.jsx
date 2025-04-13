@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
+import WalletConnect from '../WalletConnect';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,11 +39,7 @@ function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <button
-              className="btn"
-            >
-              Connect
-            </button>
+            <WalletConnect/>
           </div>
 
           {/* Mobile menu button */}
