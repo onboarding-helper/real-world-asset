@@ -18,6 +18,38 @@ The primary objective is to create an intuitive and user-friendly interface that
 
 ---
 
+## Getting Started (Dev Setup)
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/Tirios-Labs/GoldenCity.git
+cd GoldenCity
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the Development Servers
+
+```bash
+npm start
+```
+
+### 4. Environment Variables
+
+Example for `.env`:
+```
+MONGO_URI=your_mongo_connection_string
+PORT=5000
+VITE_CUSTOM_CURSOR_HIDE=true(true:use custom cursor, false: don't use custom cursor)
+```
+
+---
+
 ## Key Features
 
 ### 1. **Tokenized Real Estate (NFTs)**
@@ -92,38 +124,6 @@ GoldenCity integrates secure **identity verification** and **document authentica
 /public        → Static assets  
 /src           → Next frontend  
 ```   
-
----
-
-## Getting Started (Dev Setup)
-
-### 1. Clone the Repo
-
-```bash
-git clone https://github.com/Tirios-Labs/GoldenCity.git
-cd GoldenCity
-```
-
-### 2. Install Dependencies
-
-```bash
-npm install
-```
-
-### 3. Start the Development Servers
-
-```bash
-npm start
-```
-
-### 4. Environment Variables
-
-Example for `.env`:
-```
-MONGO_URI=your_mongo_connection_string
-PORT=5000
-VITE_CUSTOM_CURSOR_HIDE=true(true:use custom cursor, false: don't use custom cursor)
-```
 
 ---
 
