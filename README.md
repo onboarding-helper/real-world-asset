@@ -23,8 +23,8 @@ The primary objective is to create an intuitive and user-friendly interface that
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/Tirios-Labs/GoldenCity.git
-cd GoldenCity
+git clone https://github.com/onboarding-resources/real-world-asset.git
+cd real-world-asset
 ```
 
 ### 2. Install Dependencies
