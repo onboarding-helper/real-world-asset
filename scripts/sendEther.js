@@ -2,7 +2,7 @@ const { ethers } = require("hardhat");
 
 async function main() {
   const [sender] = await ethers.getSigners();
-  
+
   // Get initial balances
   console.log("\nInitial Balances:");
   console.log("Sender Account:", sender.address);
@@ -10,7 +10,7 @@ async function main() {
   console.log(`Balance: ${ethers.formatEther(senderBalance)} ETH`);
 
   // Get contract addresses
-  const SENDER_ADDRESS = "0xA887973a2EC1a3B4C7d50b84306eBCBC21bF2d5A";  // From deploy.js
+  const SENDER_ADDRESS = "0xA887973a2EC1a3B4C7d50b84306eBCBC21bF2d5A"; // From deploy.js
   const RECEIVER_ADDRESS = "0xc3b3dBE3d12128FDFf1694dd55fb18f8775E6667"; // From deployReceiver.js
 
   // Get contract instances
@@ -30,16 +30,16 @@ async function main() {
 
   // Get final balances
   console.log("\nFinal Balances:");
-  
+
   const receiverBalance = await receiverContract.getBalance();
   console.log(`Receiver Contract (${RECEIVER_ADDRESS})`);
   console.log(`Balance: ${ethers.formatEther(receiverBalance)} ETH`);
 
-  const senderContractBalance = await ethers.provider.getBalance(SENDER_ADDRESS);
+  const senderContractBalance =
+    await ethers.provider.getBalance(SENDER_ADDRESS);
   console.log(`\nSender Contract (${SENDER_ADDRESS})`);
   const senderBalance2 = await ethers.provider.getBalance(sender.address);
   console.log(`Balance: ${ethers.formatEther(senderBalance2)} ETH`);
-
 }
 
 main()
@@ -47,4 +47,4 @@ main()
   .catch((error) => {
     console.error(error);
     process.exit(1);
-  }); 
+  });

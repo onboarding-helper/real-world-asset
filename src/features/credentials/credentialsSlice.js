@@ -1,5 +1,5 @@
 // features/credentials/credentialsSlice.js
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   credentials: [],
@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export const credentialsSlice = createSlice({
-  name: 'credentials',
+  name: "credentials",
   initialState,
   reducers: {
     setCredentials: (state, action) => {
@@ -31,12 +31,12 @@ export const credentialsSlice = createSlice({
   },
 });
 
-export const { 
-  setCredentials, 
-  setSelectedCredential, 
+export const {
+  setCredentials,
+  setSelectedCredential,
   clearCredentials,
   setLoading,
-  setError
+  setError,
 } = credentialsSlice.actions;
 
 export default credentialsSlice.reducer;

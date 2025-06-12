@@ -53,7 +53,7 @@ const getAllProperties = async (req, res) => {
 const getPropertyDetail = async (req, res) => {
   const { id } = req.params;
   const propertyExists = await Property.findOne({ _id: id }).populate(
-    "creator"
+    "creator",
   );
 
   if (propertyExists) {
@@ -115,7 +115,7 @@ const updateProperty = async (req, res) => {
         location,
         price,
         photo: photoUrl.url || photo,
-      }
+      },
     );
 
     res.status(200).json({ message: "Property updated successfully" });
@@ -129,7 +129,7 @@ const deleteProperty = async (req, res) => {
     const { id } = req.params;
 
     const propertyToDelete = await Property.findById({ _id: id }).populate(
-      "creator"
+      "creator",
     );
 
     if (!propertyToDelete) throw new Error("Property not found");

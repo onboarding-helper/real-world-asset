@@ -17,12 +17,12 @@ app.get("/", (req, res) => {
   res.send({ message: "Server running!" });
 });
 
-app.use("/api/v1/users",authMiddleware, userRouter,);
+app.use("/api/v1/users", authMiddleware, userRouter);
 app.use("/api/v1/properties", propertyRouter);
 
 const startServer = async () => {
   try {
-    if(process.env.MONGODB_URL){
+    if (process.env.MONGODB_URL) {
       connectDB(process.env.MONGODB_URL);
     }
     app.listen(8080, () => console.log("Server started on port 8080"));

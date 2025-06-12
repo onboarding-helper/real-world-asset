@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   pendingTransactions: [],
@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export const bridgeSlice = createSlice({
-  name: 'bridge',
+  name: "bridge",
   initialState,
   reducers: {
     setTargetChain: (state, action) => {
@@ -29,13 +29,18 @@ export const bridgeSlice = createSlice({
     },
     updatePendingTransaction: (state, action) => {
       const { id, updates } = action.payload;
-      const index = state.pendingTransactions.findIndex(tx => tx.id === id);
+      const index = state.pendingTransactions.findIndex((tx) => tx.id === id);
       if (index !== -1) {
-        state.pendingTransactions[index] = { ...state.pendingTransactions[index], ...updates };
+        state.pendingTransactions[index] = {
+          ...state.pendingTransactions[index],
+          ...updates,
+        };
       }
     },
     removePendingTransaction: (state, action) => {
-      state.pendingTransactions = state.pendingTransactions.filter(tx => tx.id !== action.payload);
+      state.pendingTransactions = state.pendingTransactions.filter(
+        (tx) => tx.id !== action.payload,
+      );
     },
     clearBridge: (state) => {
       state.targetChain = null;
@@ -54,7 +59,7 @@ export const {
   addPendingTransaction,
   updatePendingTransaction,
   removePendingTransaction,
-  clearBridge
+  clearBridge,
 } = bridgeSlice.actions;
 
 export default bridgeSlice.reducer;

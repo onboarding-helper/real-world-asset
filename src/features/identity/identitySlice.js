@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   did: null,
@@ -8,7 +8,7 @@ const initialState = {
 };
 
 export const identitySlice = createSlice({
-  name: 'identity',
+  name: "identity",
   initialState,
   reducers: {
     setIdentity: (state, action) => {
@@ -29,5 +29,6 @@ export const identitySlice = createSlice({
   },
 });
 
-export const { setIdentity, setChainIdentities, clearIdentity } = identitySlice.actions;
+export const { setIdentity, setChainIdentities, clearIdentity } =
+  identitySlice.actions;
 export default identitySlice.reducer;

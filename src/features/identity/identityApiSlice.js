@@ -1,38 +1,38 @@
-import { apiSlice } from '../../app/api';
+import { apiSlice } from "../../app/api";
 
 export const identityApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     createDID: builder.mutation({
       query: (data) => ({
-        url: '/identity/did',
-        method: 'POST',
+        url: "/identity/did",
+        method: "POST",
         body: data,
       }),
-      invalidatesTags: ['Identity'],
+      invalidatesTags: ["Identity"],
     }),
     getDID: builder.query({
       query: (did) => `/identity/did/${did}`,
-      providesTags: ['Identity'],
+      providesTags: ["Identity"],
     }),
     getChainIdentities: builder.query({
       query: (did) => `/identity/did/${did}/chain-identities`,
-      providesTags: ['Identity'],
+      providesTags: ["Identity"],
     }),
     addChainIdentity: builder.mutation({
       query: ({ did, chain, address }) => ({
         url: `/identity/did/${did}/chain-identities`,
-        method: 'POST',
+        method: "POST",
         body: { chain, address },
       }),
-      invalidatesTags: ['Identity'],
+      invalidatesTags: ["Identity"],
     }),
     updateDID: builder.mutation({
       query: ({ did, updates }) => ({
         url: `/identity/did/${did}`,
-        method: 'PUT',
+        method: "PUT",
         body: { updates },
       }),
-      invalidatesTags: ['Identity'],
+      invalidatesTags: ["Identity"],
     }),
   }),
 });

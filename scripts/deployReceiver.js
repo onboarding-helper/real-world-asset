@@ -11,7 +11,7 @@ async function main() {
 
   const contractAddress = await receiver.getAddress();
   console.log("Receiver Contract deployed to:", contractAddress);
-  
+
   const balance = await ethers.provider.getBalance(contractAddress);
   console.log(`Receiver Contract Balance: ${ethers.formatEther(balance)} ETH`);
 

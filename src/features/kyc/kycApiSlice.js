@@ -1,29 +1,29 @@
-import { apiSlice } from '../../app/api';
+import { apiSlice } from "../../app/api";
 
 export const kycApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     initVerification: builder.mutation({
       query: (data) => ({
-        url: '/kyc/init-verification',
-        method: 'POST',
+        url: "/kyc/init-verification",
+        method: "POST",
         body: data,
       }),
-      invalidatesTags: ['KYC'],
+      invalidatesTags: ["KYC"],
     }),
     getVerificationStatus: builder.query({
       query: (verificationId) => `/kyc/verification/${verificationId}`,
-      providesTags: (result, error, id) => [{ type: 'KYC', id }],
+      providesTags: (result, error, id) => [{ type: "KYC", id }],
     }),
     getUserVerifications: builder.query({
-      query: () => '/kyc/verifications',
-      providesTags: ['KYC'],
+      query: () => "/kyc/verifications",
+      providesTags: ["KYC"],
     }),
     generateProof: builder.mutation({
       query: (verificationId) => ({
         url: `/kyc/proof/${verificationId}`,
-        method: 'POST',
+        method: "POST",
       }),
-      invalidatesTags: ['KYC'],
+      invalidatesTags: ["KYC"],
     }),
   }),
 });

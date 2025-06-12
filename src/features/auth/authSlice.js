@@ -1,9 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   user: null,
-  token: localStorage.getItem('token'),
-  isAuthenticated: !!localStorage.getItem('token'),
+  token: localStorage.getItem("token"),
+  isAuthenticated: !!localStorage.getItem("token"),
   loading: false,
   error: null,
   walletAddress: null,
@@ -11,7 +11,7 @@ const initialState = {
 };
 
 export const authSlice = createSlice({
-  name: 'auth',
+  name: "auth",
   initialState,
   reducers: {
     setCredentials: (state, action) => {
@@ -19,7 +19,7 @@ export const authSlice = createSlice({
       state.user = user;
       state.token = token;
       state.isAuthenticated = true;
-      localStorage.setItem('token', token);
+      localStorage.setItem("token", token);
     },
     logOut: (state) => {
       state.user = null;
@@ -27,7 +27,7 @@ export const authSlice = createSlice({
       state.isAuthenticated = false;
       state.walletAddress = null;
       state.chainId = null;
-      localStorage.removeItem('token');
+      localStorage.removeItem("token");
     },
     setWalletAddress: (state, action) => {
       state.walletAddress = action.payload;
@@ -50,7 +50,7 @@ export const {
   setWalletAddress,
   setChainId,
   setLoading,
-  setError
+  setError,
 } = authSlice.actions;
 
 export default authSlice.reducer;

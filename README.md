@@ -23,7 +23,7 @@ The primary objective is to create an intuitive and user-friendly interface that
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/onboarding-resources/real-world-asset.git
+git clone https://github.com/onboarding-helper/real-world-asset.git
 cd real-world-asset
 ```
 

@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   verificationId: null,
@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export const kycSlice = createSlice({
-  name: 'kyc',
+  name: "kyc",
   initialState,
   reducers: {
     setVerification: (state, action) => {
@@ -32,5 +32,6 @@ export const kycSlice = createSlice({
   },
 });
 
-export const { setVerification, setStatus, setProof, clearKyc } = kycSlice.actions;
+export const { setVerification, setStatus, setProof, clearKyc } =
+  kycSlice.actions;
 export default kycSlice.reducer;
